@@ -1,12 +1,12 @@
 # Deafblind_device_hackathon
 3rd national rehabilitation center device hackathon for deaf-blind
 
-Product name - 세상을 보는 눈
+Product name - 세상을 보는 눈   
 Team name - 혼자서도 잘하조  
 Leader - 이종복  
 Team - 김선우, 기인호, 김상도
 
-Product name - EYE
+Product name - EYE    
 Team name - Do It Alone  
 Leader - JB LEE  
 Team - SW KIM, IH KEE, SD KIM
