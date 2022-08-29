@@ -1,17 +1,25 @@
 # Deafblind_device_hackathon
 3rd national rehabilitation center device hackathon for deaf-blind
 
-Team - 혼자서도 잘하조  
+Product name - 세상을 보는 눈
+Team name - 혼자서도 잘하조  
 Leader - 이종복  
 Team - 김선우, 기인호, 김상도
+
+Product name - EYE
+Team name - Do It Alone  
+Leader - JB LEE  
+Team - SW KIM, IH KEE, SD KIM
 
 ## What & Why (Included features)
 @@ need to add poster image
 
 ## 3d model
+@@ need to change image
 <img src="https://user-images.githubusercontent.com/41245985/55308508-ee840300-5495-11e9-9725-1348480ac39c.PNG" width="90%"></img>
 
 ## product
+@@ need to change image
 <img src="https://user-images.githubusercontent.com/41245985/55308915-16c03180-5497-11e9-9f1e-ca2fd453adea.png" width="90%"></img>
 
 ## hardware list
@@ -29,10 +37,11 @@ Dot cell module - 1pcs
 ## Dependency
 ### Master(Cane) raspberrypi
 ```
- pip3 install random    
- pip3 install msgpack-rpc-python      
- pip3 install time     
- pip3 install huskylib     
+pip3 install random    
+pip3 install msgpack-rpc-python      
+pip3 install time     
+pip3 install huskylib    
+apt install libblutooth-dev    
 ```
 
 ### Slave(IoT system) raspberrypi
@@ -42,6 +51,7 @@ pip3 install msgpack-rpc-python
 pip3 install time     
 pip3 install huskylib     
 pip3 install pygame     
+apt install libblutooth-dev    
 ```
 
 ## Auto start
