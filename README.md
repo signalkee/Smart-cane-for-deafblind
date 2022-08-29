@@ -5,6 +5,27 @@ Team - 혼자서도 잘하조
 Leader - 이종복  
 Team - 김선우, 기인호, 김상도
 
+## What & Why (Included features)
+@@ need to add poster image
+
+## 3d model
+<img src="https://user-images.githubusercontent.com/41245985/55308508-ee840300-5495-11e9-9725-1348480ac39c.PNG" width="90%"></img>
+
+## product
+<img src="https://user-images.githubusercontent.com/41245985/55308915-16c03180-5497-11e9-9f1e-ca2fd453adea.png" width="90%"></img>
+
+## hardware list
+Foldable cane - 1 pcs  
+Raspberry-pi 4 - 1 pcs   
+Raspberry-pi 3 b+ - 1pcs   
+Huskey lens - 2 pcs     
+vibration motor - 1 pcs     
+2cell Lipo - 1 pcs    
+switch - 6 pcs    
+voltage step down module - 2 pcs    
+usb C to usb A cable - 2 pcs    
+Dot cell module - 1pcs  
+
 ## Dependency
 ### Master(Cane) raspberrypi
 ```
@@ -41,25 +62,26 @@ sudo vi /etc/xdg/lxsession/LXDE-pi/autostart
 @/usr/bin/python3 /home/hz/Desktop/slave_main.py    
 #need to change to your directory
 ```
+## For Independent Cane usage
+You should remove several codes in master_main.py
 
+```
+# line num 5
+client = msgpackrpc.Client(msgpackrpc.Address("127.0.0.1", 3321))
+
+# line num 43~50
+	doorbell = client.call('readsend', 1)
+	if doorbell != last_doorbel:
+		doorbell = doorbell % 5
+		print(f"{nameList[doorbell]} arrive!")
+		GPIO.output(vib, GPIO.HIGH)
+		time.sleep(2)
+		GPIO.output(vib, GPIO.LOW)
+		last_doorbell = doorbell
+
+
+```
     
-## 3d model
-<img src="https://user-images.githubusercontent.com/41245985/55308508-ee840300-5495-11e9-9725-1348480ac39c.PNG" width="90%"></img>
-
-## product
-<img src="https://user-images.githubusercontent.com/41245985/55308915-16c03180-5497-11e9-9f1e-ca2fd453adea.png" width="90%"></img>
-
-## hardware list
-Foldable cane - 1 pcs  
-Raspberry-pi 4 - 1 pcs   
-Raspberry-pi 3 b+ - 1pcs   
-Huskey lens - 2 pcs     
-vibration motor - 1 pcs     
-2cell Lipo - 1 pcs    
-switch - 6 pcs    
-voltage step down module - 2 pcs    
-usb C to usb A cable - 2 pcs    
-Dot cell module - 1pcs  
 
 ## hackathon poster
 <img src="https://user-images.githubusercontent.com/41769238/187227556-c47e390f-88bd-43a0-a315-b4da69071ff2.png" width="90%"></img>
