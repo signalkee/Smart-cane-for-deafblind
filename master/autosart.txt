@@ -1,0 +1,5 @@
+sudo vi /etc/xdg/lxsession/LXDE-pi/autostart
+
++
+@sudo /home/hz/Desktop/client
+@/usr/bin/python3 /home/hz/Desktop/master_main.py
