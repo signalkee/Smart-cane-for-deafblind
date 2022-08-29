@@ -15,12 +15,13 @@ Team - 김선우, 기인호, 김상도
 @@ need to add poster image
 
 ## 3d model
-@@ need to change image
-<img src="https://user-images.githubusercontent.com/41245985/55308508-ee840300-5495-11e9-9725-1348480ac39c.PNG" width="90%"></img>
+<img src="https://user-images.githubusercontent.com/41769238/187233177-0179fb16-1ae2-43b0-9ebe-1cd48d6d107b.png" width="50%"></img>
+<img src="https://user-images.githubusercontent.com/41769238/187233165-c408e862-5ca7-48f4-af45-fe1b82cfd5b7.png" width="50%"></img>
+<img src="https://user-images.githubusercontent.com/41769238/187233174-ec815071-a689-4df4-beea-48101546c60f.png" width="50%"></img>
 
 ## product
-@@ need to change image
-<img src="https://user-images.githubusercontent.com/41245985/55308915-16c03180-5497-11e9-9f1e-ca2fd453adea.png" width="90%"></img>
+@@ need to change image    
+<img src="https://user-images.githubusercontent.com/41769238/187233177-0179fb16-1ae2-43b0-9ebe-1cd48d6d107b.png" width="50%"></img>
 
 ## hardware list
 Foldable cane - 1 pcs  
