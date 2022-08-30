@@ -11,17 +11,22 @@ Team name - 혼자서도 잘하조
 Leader - 이종복  
 Team - 김선우, 기인호, 김상도
 
+## Overall product summary
+<img src="https://user-images.githubusercontent.com/41769238/187329859-dacca075-294a-41b6-8974-2fcac7f3d13b.png" width="100%"></img>
+
 ## What & Why (Included features)
 @@ need to add poster image
 
 ## 3d model
-<img src="https://user-images.githubusercontent.com/41769238/187233177-0179fb16-1ae2-43b0-9ebe-1cd48d6d107b.png" width="50%"></img>
-<img src="https://user-images.githubusercontent.com/41769238/187233165-c408e862-5ca7-48f4-af45-fe1b82cfd5b7.png" width="50%"></img>
-<img src="https://user-images.githubusercontent.com/41769238/187233174-ec815071-a689-4df4-beea-48101546c60f.png" width="50%"></img>
+<img src="https://user-images.githubusercontent.com/41769238/187233177-0179fb16-1ae2-43b0-9ebe-1cd48d6d107b.png" width="60%"></img>
+<img src="https://user-images.githubusercontent.com/41769238/187233165-c408e862-5ca7-48f4-af45-fe1b82cfd5b7.png" width="60%"></img>
+<img src="https://user-images.githubusercontent.com/41769238/187233174-ec815071-a689-4df4-beea-48101546c60f.png" width="60%"></img>
 
-## product
-@@ need to change image    
-<img src="https://user-images.githubusercontent.com/41769238/187233177-0179fb16-1ae2-43b0-9ebe-1cd48d6d107b.png" width="50%"></img>
+## Module assembly diagram
+<img src="https://user-images.githubusercontent.com/41769238/187329878-73434c28-6c5d-4806-821c-b8774560256b.png" width="100%"></img>
+
+## Pin map
+<img src="https://user-images.githubusercontent.com/41769238/187329871-9d80cff0-94ea-498b-b785-1691e697c9f6.png" width="100%"></img>
 
 ## hardware list
 Foldable cane - 1 pcs  
@@ -42,6 +47,7 @@ pip3 install random
 pip3 install msgpack-rpc-python      
 pip3 install time     
 pip3 install huskylib    
+pip3 install pypng     
 apt install libblutooth-dev    
 ```
 
@@ -52,11 +58,12 @@ pip3 install msgpack-rpc-python
 pip3 install time     
 pip3 install huskylib     
 pip3 install pygame     
+pip3 install pypng    
 apt install libblutooth-dev    
 ```
 
 ## Auto start
-### Master
+### Master(Cane) raspberrypi
 ```
 sudo vi /etc/xdg/lxsession/LXDE-pi/autostart   
    
@@ -65,7 +72,7 @@ sudo vi /etc/xdg/lxsession/LXDE-pi/autostart
 #need to change to your directory
 ```
 
-### Slave
+### Slave(IoT system) raspberrypi
 ```
 sudo vi /etc/xdg/lxsession/LXDE-pi/autostart   
     
