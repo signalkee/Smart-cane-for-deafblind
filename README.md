@@ -17,7 +17,7 @@ Team - 김선우, 기인호, 김상도
 ## What & Why (Included features)
 @@ need to add poster image
 
-## 3d model
+## 3D model
 <img src="https://user-images.githubusercontent.com/41769238/187233177-0179fb16-1ae2-43b0-9ebe-1cd48d6d107b.png" width="60%"></img>
 <img src="https://user-images.githubusercontent.com/41769238/187233165-c408e862-5ca7-48f4-af45-fe1b82cfd5b7.png" width="60%"></img>
 <img src="https://user-images.githubusercontent.com/41769238/187233174-ec815071-a689-4df4-beea-48101546c60f.png" width="60%"></img>
@@ -28,7 +28,7 @@ Team - 김선우, 기인호, 김상도
 ## Pin map
 <img src="https://user-images.githubusercontent.com/41769238/187329871-9d80cff0-94ea-498b-b785-1691e697c9f6.png" width="100%"></img>
 
-## hardware list
+## Hardware list
 Foldable cane - 1 pcs  
 Raspberry-pi 4 - 1 pcs   
 Raspberry-pi 3 b+ - 1pcs   
@@ -101,7 +101,7 @@ client = msgpackrpc.Client(msgpackrpc.Address("127.0.0.1", 3321))
 ```
     
 
-## hackathon poster
+## Hackathon poster
 <img src="https://user-images.githubusercontent.com/41769238/187227556-c47e390f-88bd-43a0-a315-b4da69071ff2.png" width="90%"></img>
 <img src="https://user-images.githubusercontent.com/41769238/187227565-e666563c-b61f-4928-a4c0-e60d37e2fba3.png" width="90%"></img>
 
