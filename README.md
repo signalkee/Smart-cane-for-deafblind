@@ -26,7 +26,7 @@ Team - 김선우, 기인호, 김상도
 <img src="https://user-images.githubusercontent.com/41769238/187329878-73434c28-6c5d-4806-821c-b8774560256b.png" width="100%"></img>
 
 ## Pin map
-<img src="https://user-images.githubusercontent.com/41769238/187329871-9d80cff0-94ea-498b-b785-1691e697c9f6.png" width="100%"></img>
+<img src="https://user-images.githubusercontent.com/41769238/187330582-d0b20a61-d0af-4f7f-b79f-0c695d23a685.png" width="100%"></img>
 
 ## Hardware list
 Foldable cane - 1 pcs  
