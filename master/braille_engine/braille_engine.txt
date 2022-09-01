@@ -1,0 +1,15 @@
+int BrailleTranslator(uint16_t* input, uint8_t* output, int appOpt[NUM_USER_OPT]);
+
+return
+    점자 데이터 갯수
+parameter
+    uint16_t* input
+        점자 번역을 하고자 하는 문자열, UTF-16 인코딩, 최대 2,048자(4,096 bytes)
+        e.g. 점자 번역을 원하는 문자열이 '가나다라'이면, 'input'은 '0xAC00, 0xB098, 0xB2E4, 0xB77C'
+    uint8_t* output
+        점자 번역을 후 생성된 데이터, 최대 6,144자(6,144 bytes)
+        e.g. 입력이 '가나다라'이면, 'output'은 '0x2B, 0x09, 0x0A, 0x10, 0x23'(⠫⠉⠊⠐⠣)
+    int appOpt[NUM_USER_OPT]
+        점자 번역에 사용되는 옵션값
+        점자 언어, 약어 사용 여부에 따라 다른 값이 사용되지만, 이 경우엔 아래 값 사용
+        int appOpt[NUM_USER_OPT] = {0x0A, 0x01, 0x00, 0x00, 0x14, 0x01, 0x01, 0x01, 0x01};
