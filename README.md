@@ -30,7 +30,7 @@ Foldable cane - 1 pcs
 Raspberrypi 4 - 1 pcs   
 Raspberrypi 3 b+ - 1pcs   
 Huskey lens - 2 pcs     
-Micro SD card - 2pcs  # Load trained models in HUSKEYLENS folder
+Micro SD card - 2pcs  # Load trained models in HUSKEYLENS folder     
 vibration motor - 1 pcs     
 2cell Lipo - 1 pcs    
 switch - 6 pcs    
