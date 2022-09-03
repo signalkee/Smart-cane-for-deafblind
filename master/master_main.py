@@ -2,7 +2,7 @@ import random
 import msgpackrpc
 import time
 import serial
-time.sleep(40)
+# time.sleep(40)
 try:
 	client = msgpackrpc.Client(msgpackrpc.Address("127.0.0.1", 3321))
 except Exception as e:
@@ -39,24 +39,7 @@ BOTPOT = b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x18\x03\
 AIRCON = b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x1D\x0E\x0B\x3E'
 SETACKI = b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x20\x1D\x13\x01\x08\x15'
 MENUAL = b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x20\x1E\x11\x3B'
-'''
-초인종 ⠰⠥⠟⠨⠿
-종복 ⠨⠿⠘⠭
-선우 ⠠⠾⠍
-인호 ⠟⠚⠥
-상도 ⠇⠶⠊⠥
-대기 ⠊⠗⠈⠕
-빨 ⠠⠘⠂
-초 ⠰⠥
-천 ⠰⠾
-오천 ⠥⠰⠾
-만 ⠑⠒
-오만 ⠥⠑⠒
-밥솥 ⠘⠃⠠⠥⠦
-에어컨 ⠝⠎⠋⠾
-세탁기 ⠠⠝⠓⠁⠈⠕
-설명 ⠠⠞⠑⠻+
-'''
+
 
 
 all_down_data = b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
@@ -108,7 +91,7 @@ IoTMode = 0
 isServer = True
 
 doorbell = 0
-last_doorbel = 0
+last_doorbell = 0
 nameList = ["stranger", "jongbok", "sunu", "inho", "sangdo"]
 
 GPIO.output(vib, GPIO.HIGH)
@@ -119,11 +102,15 @@ while True: # main loop
     # door bell
 	try:
 		doorbell = client.call('readsend', 1)
-		isServer = True
+		print(doorbell)
 	except Exception as e:
-		isServer = False
+		try:
+			client = msgpackrpc.Client(msgpackrpc.Address("127.0.0.1", 3321))
+		except Exception as e:
+			print('no server')
 
-	if doorbell != last_doorbel:
+	if doorbell != last_doorbell:
+		last_doorbell = doorbell
 		doorbell = doorbell % 5
 		print(f"{nameList[doorbell]} arrive!")
 		GPIO.output(vib, GPIO.HIGH)
@@ -141,7 +128,6 @@ while True: # main loop
 		GPIO.output(vib, GPIO.LOW)
 		time.sleep(1)
 		write_dot(all_down_data)
-		last_doorbell = doorbell
 		write_dot()
     
     # BUTTON UP
@@ -158,15 +144,16 @@ while True: # main loop
 		
 		# if got into IoTMode, cook rice! 
 		if(IoTMode == 1):
-			if isServer:
+			try:
 				print(f"activate rice cooker!")
 				client.call('send', 5)
 				write_dot(BOTPOT)
 				time.sleep(3)
 				write_dot(all_down_data)
-			# return to default setting(non-IoTMode)
-			else:
+			except Exception as e:
 				print('no server!')
+				
+			# return to default setting(non-IoTMode)
 			IoTMode = 0
 			
 		# get into IoTMode
@@ -218,13 +205,17 @@ while True: # main loop
 		
 		# if got into IoTMode, airconditioner!
 		if(IoTMode == 1):
-			print(f"airconditioner!")
-			write_dot(AIRCON)
-			client.call('send', 6)  
-			time.sleep(3)
-			write_dot(all_down_data)
+			try:
+				print("airconditioner!")
+				client.call('send', 6)
+				write_dot(AIRCON)
+				time.sleep(3)
+				write_dot(all_down_data)
+			except Exception as e:
+				print('no server!')
 			# return to default setting(non-IoTMode)
 			IoTMode = 0
+			
 		else:
 			if SwitchMode == 3:
 				SwitchMode = 0
@@ -232,10 +223,12 @@ while True: # main loop
 				SwitchMode = 3
 				hl.algorthim("ALGORITHM_FACE_RECOGNITION")
 				time.sleep(1)
+			write_dot(all_down_data)
 
-	# money classification - face recognition
+# money classification - face recognition
 	if(SwitchMode == 3):
-		# write_dot(DAEKI) 
+# 		write_dot(DAEKI) 
+		        
 		try:
 			#hl.algorthim("ALGORITHM_FACE_RECOGNITION")
 			#time.sleep(0.3)
@@ -244,19 +237,23 @@ while True: # main loop
 				if(money_num == 1):
 					print(f"1000won")
 					write_dot(CHEON) 
-					time.sleep(1)
+					time.sleep(2)
+					write_dot(all_down_data)
 				elif(money_num == 2):
 					print(f"5000won")
 					write_dot(OHCHEON) 
-					time.sleep(1)
+					time.sleep(2)
+					write_dot(all_down_data)
 				elif(money_num == 3):
 					print(f"10000won")
 					write_dot(MANN) 
-					time.sleep(1)
+					time.sleep(2)
+					write_dot(all_down_data)
 				elif(money_num > 3):
 					print(f"50000won")
 					write_dot(OHMANN) 
-					time.sleep(1)
+					time.sleep(2)
+					write_dot(all_down_data)
 		except KeyboardInterrupt:
 			print("\nQUITING")
 			quit()
@@ -264,7 +261,6 @@ while True: # main loop
 			print(f"cc")
 		except Exception as e:
 			print(f"Error {e}")
-
 
 	# BUTTON RIGHT
 	if GPIO.input(button_right) == GPIO.LOW:
@@ -280,11 +276,14 @@ while True: # main loop
 		
 		# if got into IoTMode, washing machine!
 		if(IoTMode == 1):
-			print(f"washing machine!")
-			write_dot(SETACKI)
-			client.call('send', 13)  
-			time.sleep(3)
-			write_dot(all_down_data)
+			try:
+				print("ashing machine!")
+				client.call('send', 13)
+				write_dot(SETACKI)
+				time.sleep(3)
+				write_dot(all_down_data)
+			except Exception as e:
+				print('no server!')
 			# return to default setting(non-IoTMode)
 			IoTMode = 0
 		else:
@@ -292,16 +291,20 @@ while True: # main loop
 				SwitchMode = 0
 			else:
 				SwitchMode = 4
+				hl.algorthim("ALGORITHM_OBJECT_CLASSIFICATION")
+				time.sleep(0.3)
+			write_dot(all_down_data)
 
 # Traffic light - object classification & color recognition
 	if(SwitchMode == 4):
-		# write_dot(DAEKI)
+# 		write_dot(DAEKI)
 		try:
-			hl.algorthim("ALGORITHM_OBJECT_CLASSIFICATION")
-			time.sleep(0.3)
+# 			hl.algorthim("ALGORITHM_OBJECT_CLASSIFICATION")
+# 			time.sleep(0.3)
 			if(type(hl.requestAll()[0]) != int):
 				temp = hl.requestAll()[0].__dict__['ID']
 			if(temp == True):
+				temp=False
 				hl.algorthim("ALGORITHM_COLOR_RECOGNITION")
 				time.sleep(0.3)
 				if(type(hl.requestAll()[0]) != int):
@@ -309,16 +312,19 @@ while True: # main loop
 					if(trfc_light > 3):
 						print(f"stopppppp")
 						write_dot(RED)
-						time.sleep(1)
-					elif(trfc_light >= 1) & (trfc_light <= 3):
+						time.sleep(2)
+						write_dot(all_down_data)
+					elif(trfc_light >= 1) & (trfc_light <=3):
 						print(f"goooooooo")
 						write_dot(GREEN)
-						time.sleep(1)
+						time.sleep(2)
+						write_dot(all_down_data)
+				hl.algorthim("ALGORITHM_OBJECT_CLASSIFICATION")
+				time.sleep(0.3)
 		except KeyboardInterrupt:
 			print("\nQUITING")
 			quit()
 		except IndexError:
 			print(f"cc")
 		except Exception as e:
-			print(f"Error {e}")  
-			
+			print(f"Error {e}")   
