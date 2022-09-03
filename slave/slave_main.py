@@ -21,11 +21,11 @@ switch_toggle = False
 pygame.mixer.pre_init(44100, 16, 2, 4096)
 pygame.init()
 pygame.mixer.init()
-pygame.mixer.music.load("/home/hz/Desktop/doorbell.MP3") # change to your mp3 file directory
+pygame.mixer.music.load("/home/hz/Desktop/doorbell.MP3")
 
 # name list for HUSKEY Lens
 nameList = ['stranger', 'jongbok', 'sunu', 'inho', 'sangdo']
-last_send = -1
+last_send = 0
 
 while(True):
 	# When someone tap the bell-switch!    
@@ -36,14 +36,20 @@ while(True):
 		pygame.mixer.music.play()
 		print("hello!\n")
 		try:
-			if(type(hl.requestAll()[0]) != int):
-				idNum = hl.requestAll()[0].__dict__['ID']
+			print("test")
+			temp = hl.requestAll()[0]
+			print("test2")
+			if(type(temp) != int):
+				print("test3")
+				idNum = temp.__dict__['ID']
+				print("test4")
 				idNum = 0 if idNum > 4 else idNum
 				print(f"{nameList[idNum]}\n")
 				if last_send == idNum:
-					last_send = idNum
-					idNum += 5            
+					idNum += 5
+				last_send = idNum
 				client.call('sendtoCANE', idNum)
+				print(idNum)
 				time.sleep(2)
 			time.sleep(1)
 		except KeyboardInterrupt:
@@ -52,7 +58,17 @@ while(True):
     # except TypeError:
     #     print("Please enter only a single letter")
 		except IndexError:
-			print(f"Command {v} not found")
+			print("Command not found")
+			try:
+				idNum = 0
+				if last_send == idNum:
+					idNum += 5
+				last_send = idNum
+				client.call('sendtoCANE', idNum)
+				print(idNum)
+				time.sleep(3)
+			except Exception:
+				print("double error")
 		except Exception as e:
         # General error -> just print it
 			print(f"Error {e}")
