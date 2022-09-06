@@ -1,5 +1,4 @@
-# Deafblind_device_hackathon
-3rd national rehabilitation center device hackathon for deaf-blind
+# Smart Cane for Deafblind
 
 Product name - Entrance to the World    
 Team name - Do well Alone  
@@ -82,9 +81,5 @@ sudo vi /etc/xdg/lxsession/LXDE-pi/autostart
 #need to change to your directory
 ```
     
-
-## Hackathon poster
-<img src="https://user-images.githubusercontent.com/41769238/187227556-c47e390f-88bd-43a0-a315-b4da69071ff2.png" width="90%"></img>
-<img src="https://user-images.githubusercontent.com/41769238/187227565-e666563c-b61f-4928-a4c0-e60d37e2fba3.png" width="90%"></img>
 
 
