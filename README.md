@@ -14,7 +14,17 @@ Team - 김선우, 기인호, 김상도
 <img src="https://user-images.githubusercontent.com/41769238/187329859-dacca075-294a-41b6-8974-2fcac7f3d13b.png" width="100%"></img>
 
 ## What & Why (Included features)
-<img src="https://user-images.githubusercontent.com/41769238/187807531-e819e7f0-2fc4-4a22-9331-fdd90d10859e.jpg" width="100%"></img>
+<img src="https://user-images.githubusercontent.com/41769238/188525615-627da11c-059d-4d6e-92ec-7fa969f777be.png" width="100%"></img>
+<img src="https://user-images.githubusercontent.com/41769238/188526032-b57f7e03-dbdd-42c5-b552-f0a96db93687.png" width="100%"></img>
+'''
+1. 4 Button on the range of thumb to select function   
+2. 8 pin & 20 cell Braille module and haptic motor for feedback    
+3. Custom Object Recognition using Deep Learning & Big data    
+- detects traffic light, bills, visitors from doorbell and gives haptic & braille feedback    
+4. IoT integrated server    
+- remote control household electronics with custom server (need API of the electronics or smart home gadgets)    
+5. Universal USB type C charging port implemented    
+'''
 
 ## 3D model
 <img src="https://user-images.githubusercontent.com/41769238/187233177-0179fb16-1ae2-43b0-9ebe-1cd48d6d107b.png" width="60%"></img>
