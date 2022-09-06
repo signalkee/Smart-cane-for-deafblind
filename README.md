@@ -22,7 +22,8 @@ Team - 김선우, 기인호, 김상도
 3. Custom Object Recognition using Deep Learning & Big data    
 - detects traffic light, bills, visitors from doorbell and gives haptic & braille feedback    
 4. IoT integrated server    
-- remote control household electronics with custom server (need API of the electronics or smart home gadgets)    
+- remote control household electronics with custom server   
+(need API of the electronics or smart home gadgets)    
 5. Universal USB type C charging port implemented    
 ```
 
