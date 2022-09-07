@@ -2,12 +2,12 @@
 
 Product name - Entrance to the World    
 Team name - Do well Alone  
-Leader - JB LEE  
+Leader - JB LEE(ljb920615@gmail.com)  
 Team - SW KIM, IH KEE, SD KIM
 
 Product name - 세상을 보는 통로   
 Team name - 혼자서도 잘하조  
-Leader - 이종복  
+Leader - 이종복(ljb920615@gmail.com)    
 Team - 김선우, 기인호, 김상도
 
 ## Overall product summary
